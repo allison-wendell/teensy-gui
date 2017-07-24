@@ -1,0 +1,1518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1068</width>
+    <height>753</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_8">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QStackedWidget" name="stackedWidget_2">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="page_5">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="yLabel">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Current
+(mA)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="PlotWidget" name="graphicsView"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="xLabel">
+           <property name="text">
+            <string>Data Points</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_6">
+        <widget class="QPlainTextEdit" name="plainTextEdit">
+         <property name="geometry">
+          <rect>
+           <x>290</x>
+           <y>40</y>
+           <width>256</width>
+           <height>192</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="tab1">
+        <attribute name="title">
+         <string>New Data</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_10">
+         <item row="7" column="5" colspan="9">
+          <widget class="QPushButton" name="chooseFile">
+           <property name="text">
+            <string>Choose File to Write</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="7" colspan="4">
+          <widget class="QPushButton" name="startSavingStopping">
+           <property name="text">
+            <string>Start Saving Data</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="13">
+          <widget class="QPushButton" name="getPortButton">
+           <property name="text">
+            <string>Get Ports</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="13">
+          <widget class="QPushButton" name="maxButton">
+           <property name="text">
+            <string>Max (10ms)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="5">
+          <widget class="QLabel" name="serialPortLabel">
+           <property name="text">
+            <string>Serial Port:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="5" colspan="9">
+          <widget class="QPushButton" name="loadConfig">
+           <property name="text">
+            <string>Load Saved Configuration</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="12">
+          <widget class="QCheckBox" name="appendRewriteBox">
+           <property name="text">
+            <string>append</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="7" colspan="6">
+          <widget class="QComboBox" name="serialComboBox"/>
+         </item>
+         <item row="1" column="12">
+          <widget class="QPushButton" name="plusButton">
+           <property name="text">
+            <string>+</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="5" colspan="9">
+          <widget class="QComboBox" name="comboBox">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="editable">
+            <bool>true</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>New Configuration - Choose Jumper and Board</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>J2 on i.MX8QM</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>J3 on i.MX8QM</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>J2 on i.MX8QXP</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>J3 on i.MX8QXP</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="11" column="0" colspan="5">
+          <widget class="QPushButton" name="displayButton">
+           <property name="text">
+            <string>Display Data</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="5" colspan="9">
+          <widget class="QPushButton" name="graphButton">
+           <property name="text">
+            <string>Graph</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" rowspan="10" colspan="5">
+          <widget class="QStackedWidget" name="stackedWidget">
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <widget class="QWidget" name="page_12"/>
+           <widget class="QWidget" name="page">
+            <layout class="QGridLayout" name="gridLayout_6">
+             <item row="2" column="6">
+              <widget class="QLabel" name="colorBox1_4">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="5">
+              <widget class="QCheckBox" name="check1_2">
+               <property name="text">
+                <string>SW_CPUA53</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="3">
+              <widget class="QLineEdit" name="lineEdit1_7"/>
+             </item>
+             <item row="2" column="3">
+              <widget class="QLineEdit" name="lineEdit1_3"/>
+             </item>
+             <item row="7" column="3">
+              <widget class="QLineEdit" name="lineEdit1_9"/>
+             </item>
+             <item row="4" column="3">
+              <widget class="QLineEdit" name="lineEdit1_5"/>
+             </item>
+             <item row="4" column="7">
+              <widget class="QLineEdit" name="lineEdit1_6"/>
+             </item>
+             <item row="7" column="1">
+              <widget class="QCheckBox" name="check1_9">
+               <property name="text">
+                <string>SW_3P3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="colorBox1_3">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="7">
+              <widget class="QLineEdit" name="lineEdit1_2"/>
+             </item>
+             <item row="4" column="5">
+              <widget class="QCheckBox" name="check1_6">
+               <property name="text">
+                <string>SW_MEMC</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="6">
+              <widget class="QLabel" name="colorBox1_6">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="6">
+              <widget class="QLabel" name="colorBox1_8">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="6">
+              <widget class="QLabel" name="colorBox1_10">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="2">
+              <widget class="QLabel" name="colorBox1_7">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="7">
+              <widget class="QLineEdit" name="lineEdit1_4"/>
+             </item>
+             <item row="7" column="7">
+              <widget class="QLineEdit" name="lineEdit1_10"/>
+             </item>
+             <item row="2" column="5">
+              <widget class="QCheckBox" name="check1_4">
+               <property name="text">
+                <string>SW_GPU0</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="check1_3">
+               <property name="text">
+                <string>SW_CPUA72</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QCheckBox" name="check1_5">
+               <property name="text">
+                <string>SW_GPU1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="2">
+              <widget class="QLabel" name="colorBox1_9">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="6">
+              <widget class="QLabel" name="colorBox1_2">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="5">
+              <widget class="QCheckBox" name="check1_10">
+               <property name="text">
+                <string>SW_1P8</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QCheckBox" name="check1_1">
+               <property name="text">
+                <string>SW_MAIN</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="7">
+              <widget class="QLineEdit" name="lineEdit1_8"/>
+             </item>
+             <item row="4" column="2">
+              <widget class="QLabel" name="colorBox1_5">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLineEdit" name="lineEdit1_1"/>
+             </item>
+             <item row="6" column="1">
+              <widget class="QCheckBox" name="check1_7">
+               <property name="text">
+                <string>SW_DDRIO0</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="5">
+              <widget class="QCheckBox" name="check1_8">
+               <property name="text">
+                <string>SW_DDRIO1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="colorBox1_1">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="7">
+              <widget class="QCheckBox" name="checkAllCheckBox1">
+               <property name="text">
+                <string>check all</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_2">
+            <layout class="QGridLayout" name="gridLayout_5">
+             <item row="2" column="7">
+              <widget class="QLineEdit" name="lineEdit2_8"/>
+             </item>
+             <item row="0" column="7">
+              <widget class="QLineEdit" name="lineEdit2_2"/>
+             </item>
+             <item row="1" column="5">
+              <widget class="QCheckBox" name="check2_4">
+               <property name="text">
+                <string>SW_3P3_SD1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="4">
+              <widget class="QLineEdit" name="lineEdit2_5"/>
+             </item>
+             <item row="3" column="4">
+              <widget class="QLineEdit" name="lineEdit2_7"/>
+             </item>
+             <item row="0" column="5">
+              <widget class="QCheckBox" name="check2_2">
+               <property name="text">
+                <string>LDO_SD1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="2">
+              <widget class="QCheckBox" name="check2_5">
+               <property name="text">
+                <string>SW_3P3_SD2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0" colspan="3">
+              <widget class="QCheckBox" name="check2_1">
+               <property name="text">
+                <string>LDO_SCU1P8</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QCheckBox" name="check2_3">
+               <property name="text">
+                <string>LDO_SD2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="4">
+              <widget class="QLineEdit" name="lineEdit2_3"/>
+             </item>
+             <item row="3" column="7">
+              <widget class="QLineEdit" name="lineEdit2_6"/>
+             </item>
+             <item row="1" column="7">
+              <widget class="QLineEdit" name="lineEdit2_4"/>
+             </item>
+             <item row="3" column="0">
+              <widget class="QCheckBox" name="check2_7">
+               <property name="text">
+                <string>LDO_2P5</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="4">
+              <widget class="QLineEdit" name="lineEdit2_1"/>
+             </item>
+             <item row="2" column="5">
+              <widget class="QCheckBox" name="check2_6">
+               <property name="text">
+                <string>LDO_SIM</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QCheckBox" name="check2_9">
+               <property name="text">
+                <string>P5V0</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="4">
+              <widget class="QLineEdit" name="lineEdit2_9"/>
+             </item>
+             <item row="3" column="5">
+              <widget class="QCheckBox" name="check2_8">
+               <property name="text">
+                <string>LDO_1P2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLabel" name="colorBox2_1">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="6">
+              <widget class="QLabel" name="colorBox2_2">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QLabel" name="colorBox2_3">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="6">
+              <widget class="QLabel" name="colorBox2_4">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="3">
+              <widget class="QLabel" name="colorBox2_5">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="6">
+              <widget class="QLabel" name="colorBox2_6">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="3">
+              <widget class="QLabel" name="colorBox2_7">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="6">
+              <widget class="QLabel" name="colorBox2_8">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="3">
+              <widget class="QLabel" name="colorBox2_9">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="7">
+              <widget class="QCheckBox" name="checkAllCheckBox2">
+               <property name="text">
+                <string>check all</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+            <zorder>check2_1</zorder>
+            <zorder>lineEdit2_1</zorder>
+            <zorder>check2_2</zorder>
+            <zorder>check2_3</zorder>
+            <zorder>lineEdit2_3</zorder>
+            <zorder>check2_4</zorder>
+            <zorder>check2_5</zorder>
+            <zorder>lineEdit2_5</zorder>
+            <zorder>check2_7</zorder>
+            <zorder>lineEdit2_7</zorder>
+            <zorder>check2_9</zorder>
+            <zorder>lineEdit2_9</zorder>
+            <zorder>check2_6</zorder>
+            <zorder>check2_8</zorder>
+            <zorder>lineEdit2_6</zorder>
+            <zorder>lineEdit2_4</zorder>
+            <zorder>lineEdit2_2</zorder>
+            <zorder>lineEdit2_8</zorder>
+            <zorder>colorBox2_1</zorder>
+            <zorder>colorBox2_2</zorder>
+            <zorder>colorBox2_3</zorder>
+            <zorder>colorBox2_4</zorder>
+            <zorder>colorBox2_5</zorder>
+            <zorder>colorBox2_6</zorder>
+            <zorder>colorBox2_7</zorder>
+            <zorder>colorBox2_8</zorder>
+            <zorder>colorBox2_9</zorder>
+            <zorder>checkAllCheckBox2</zorder>
+           </widget>
+           <widget class="QWidget" name="page_3">
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="4" column="2">
+              <widget class="QLabel" name="colorBox3_5">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="6">
+              <widget class="QLabel" name="colorBox3_6">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="7">
+              <widget class="QLineEdit" name="lineEdit3_4"/>
+             </item>
+             <item row="4" column="3">
+              <widget class="QLineEdit" name="lineEdit3_5"/>
+             </item>
+             <item row="2" column="3">
+              <widget class="QLineEdit" name="lineEdit3_3"/>
+             </item>
+             <item row="4" column="7">
+              <widget class="QLineEdit" name="lineEdit3_6"/>
+             </item>
+             <item row="2" column="4">
+              <widget class="QCheckBox" name="check3_4">
+               <property name="text">
+                <string>VDD_DDRIO</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLineEdit" name="lineEdit3_1"/>
+             </item>
+             <item row="4" column="4">
+              <widget class="QCheckBox" name="check3_6">
+               <property name="text">
+                <string>VDD_SW1V8</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="7">
+              <widget class="QLineEdit" name="lineEdit3_2"/>
+             </item>
+             <item row="0" column="4" colspan="2">
+              <widget class="QCheckBox" name="check3_2">
+               <property name="text">
+                <string>VDD_CPU</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QCheckBox" name="check3_5">
+               <property name="text">
+                <string>VDD_SW3V3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0" colspan="2">
+              <widget class="QCheckBox" name="check3_1">
+               <property name="text">
+                <string>VDD_MAIN</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QCheckBox" name="check3_3">
+               <property name="text">
+                <string>VDD_GPU</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="colorBox3_1">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="6">
+              <widget class="QLabel" name="colorBox3_2">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="colorBox3_3">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="6">
+              <widget class="QLabel" name="colorBox3_4">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="7">
+              <widget class="QCheckBox" name="checkAllCheckBox3">
+               <property name="text">
+                <string>check all</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_4">
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="2" column="6">
+              <widget class="QCheckBox" name="check4_4">
+               <property name="text">
+                <string>SD1_SPWR</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="6">
+              <widget class="QCheckBox" name="check4_2">
+               <property name="text">
+                <string>LDO_SD1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="8">
+              <widget class="QLineEdit" name="lineEdit4_2"/>
+             </item>
+             <item row="5" column="5">
+              <widget class="QLineEdit" name="lineEdit4_7"/>
+             </item>
+             <item row="2" column="5">
+              <widget class="QLineEdit" name="lineEdit4_3"/>
+             </item>
+             <item row="0" column="5">
+              <widget class="QLineEdit" name="lineEdit4_1"/>
+             </item>
+             <item row="5" column="8">
+              <widget class="QLineEdit" name="lineEdit4_8"/>
+             </item>
+             <item row="4" column="8">
+              <widget class="QLineEdit" name="lineEdit4_6"/>
+             </item>
+             <item row="2" column="8">
+              <widget class="QLineEdit" name="lineEdit4_4"/>
+             </item>
+             <item row="5" column="0">
+              <widget class="QCheckBox" name="check4_7">
+               <property name="text">
+                <string>LDO_1V2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0" colspan="2">
+              <widget class="QCheckBox" name="check4_5">
+               <property name="text">
+                <string>LDO_S</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0" colspan="4">
+              <widget class="QCheckBox" name="check4_1">
+               <property name="text">
+                <string>LDO_SCU1V8</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="6">
+              <widget class="QCheckBox" name="check4_6">
+               <property name="text">
+                <string>LDO_2V5</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="2">
+              <widget class="QCheckBox" name="check4_3">
+               <property name="text">
+                <string>LDO_SD2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="6">
+              <widget class="QCheckBox" name="check4_8">
+               <property name="text">
+                <string>P5V0</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="5">
+              <widget class="QLineEdit" name="lineEdit4_5"/>
+             </item>
+             <item row="0" column="4">
+              <widget class="QLabel" name="colorBox4_1">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="7">
+              <widget class="QLabel" name="colorBox4_2">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="4">
+              <widget class="QLabel" name="colorBox4_3">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="7">
+              <widget class="QLabel" name="colorBox4_4">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="4">
+              <widget class="QLabel" name="colorBox4_5">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="7">
+              <widget class="QLabel" name="colorBox4_6">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="4">
+              <widget class="QLabel" name="colorBox4_7">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="7">
+              <widget class="QLabel" name="colorBox4_8">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="8">
+              <widget class="QCheckBox" name="checkAllCheckBox4">
+               <property name="text">
+                <string>check all</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item row="1" column="11">
+          <widget class="QPushButton" name="minusButton">
+           <property name="text">
+            <string>-</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="10">
+          <widget class="QPushButton" name="minButton">
+           <property name="text">
+            <string>Min (1s)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="7" colspan="6">
+          <widget class="QLineEdit" name="lineEdit"/>
+         </item>
+         <item row="1" column="5" colspan="2">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Update Rate:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="7" colspan="3">
+          <widget class="QLineEdit" name="updateRateLineEdit"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab2">
+        <attribute name="title">
+         <string>Saved Data</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="0">
+          <widget class="QSplitter" name="splitter">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+           <widget class="QWidget" name="layoutWidget">
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QPushButton" name="chooseSavedFile">
+               <property name="text">
+                <string>Choose Saved File</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>label</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QStackedWidget" name="stackedWidget_3">
+               <property name="currentIndex">
+                <number>4</number>
+               </property>
+               <widget class="QWidget" name="page_11"/>
+               <widget class="QWidget" name="page_7">
+                <layout class="QGridLayout" name="gridLayout_13">
+                 <item row="3" column="2">
+                  <widget class="QLabel" name="colorBox1_15">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="4">
+                  <widget class="QCheckBox" name="check1_18">
+                   <property name="text">
+                    <string>SW_DDRIO1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="3">
+                  <widget class="QLineEdit" name="lineEdit1_2_7"/>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QLineEdit" name="lineEdit1_2_3"/>
+                 </item>
+                 <item row="0" column="6">
+                  <widget class="QLineEdit" name="lineEdit1_2_2"/>
+                 </item>
+                 <item row="5" column="1">
+                  <widget class="QCheckBox" name="check1_17">
+                   <property name="text">
+                    <string>SW_DDRIO0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="3">
+                  <widget class="QLineEdit" name="lineEdit1_2_9"/>
+                 </item>
+                 <item row="6" column="4">
+                  <widget class="QCheckBox" name="check1_20">
+                   <property name="text">
+                    <string>SW_1P8</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="6">
+                  <widget class="QLineEdit" name="lineEdit1_2_6"/>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QCheckBox" name="check1_11">
+                   <property name="text">
+                    <string>SW_MAIN</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QCheckBox" name="check1_13">
+                   <property name="text">
+                    <string>SW_CPUA72</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="3">
+                  <widget class="QLineEdit" name="lineEdit1_2_5"/>
+                 </item>
+                 <item row="6" column="6">
+                  <widget class="QLineEdit" name="lineEdit1_2_10"/>
+                 </item>
+                 <item row="1" column="4">
+                  <widget class="QCheckBox" name="check1_14">
+                   <property name="text">
+                    <string>SW_GPU0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="4">
+                  <widget class="QCheckBox" name="check1_12">
+                   <property name="text">
+                    <string>SW_CPUA53</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QCheckBox" name="check1_15">
+                   <property name="text">
+                    <string>SW_GPU1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="6">
+                  <widget class="QLineEdit" name="lineEdit1_2_8"/>
+                 </item>
+                 <item row="3" column="4">
+                  <widget class="QCheckBox" name="check1_16">
+                   <property name="text">
+                    <string>SW_MEMC</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="1">
+                  <widget class="QCheckBox" name="check1_19">
+                   <property name="text">
+                    <string>SW_3P3</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QLineEdit" name="lineEdit1_2_1"/>
+                 </item>
+                 <item row="1" column="6">
+                  <widget class="QLineEdit" name="lineEdit1_2_4"/>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QLabel" name="colorBox1_11">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QLabel" name="colorBox1_13">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="2">
+                  <widget class="QLabel" name="colorBox1_17">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="2">
+                  <widget class="QLabel" name="colorBox1_19">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="5">
+                  <widget class="QLabel" name="colorBox1_12">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="5">
+                  <widget class="QLabel" name="colorBox1_16">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="5">
+                  <widget class="QLabel" name="colorBox1_18">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="5">
+                  <widget class="QLabel" name="colorBox1_20">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="5">
+                  <widget class="QLabel" name="colorBox1_14">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="page_8">
+                <layout class="QGridLayout" name="gridLayout_14">
+                 <item row="0" column="5">
+                  <widget class="QLineEdit" name="lineEdit2_2_2"/>
+                 </item>
+                 <item row="1" column="5">
+                  <widget class="QLineEdit" name="lineEdit2_2_4"/>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="QLineEdit" name="lineEdit2_2_9"/>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QCheckBox" name="check2_16">
+                   <property name="text">
+                    <string>LDO_2P5</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="3">
+                  <widget class="QCheckBox" name="check2_15">
+                   <property name="text">
+                    <string>LDO_SIM</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QLineEdit" name="lineEdit2_2_1"/>
+                 </item>
+                 <item row="2" column="5">
+                  <widget class="QLineEdit" name="lineEdit2_2_6"/>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QCheckBox" name="check2_18">
+                   <property name="text">
+                    <string>P5V0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QCheckBox" name="check2_13">
+                   <property name="text">
+                    <string>SW_3P3_SD1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="check2_10">
+                   <property name="text">
+                    <string>LDO_SCU1P8</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="5">
+                  <widget class="QLineEdit" name="lineEdit2_2_8"/>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QCheckBox" name="check2_11">
+                   <property name="text">
+                    <string>LDO_SD1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QLineEdit" name="lineEdit2_2_3"/>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QLineEdit" name="lineEdit2_2_5"/>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="QLineEdit" name="lineEdit2_2_7"/>
+                 </item>
+                 <item row="3" column="3">
+                  <widget class="QCheckBox" name="check2_17">
+                   <property name="text">
+                    <string>LDO_1P2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QCheckBox" name="check2_14">
+                   <property name="text">
+                    <string>SW_3P3_SD2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="check2_12">
+                   <property name="text">
+                    <string>LDO_SD2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="colorBox2_10">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="4">
+                  <widget class="QLabel" name="colorBox2_11">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="colorBox2_12">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="4">
+                  <widget class="QLabel" name="colorBox2_13">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLabel" name="colorBox2_14">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="4">
+                  <widget class="QLabel" name="colorBox2_15">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLabel" name="colorBox2_16">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="4">
+                  <widget class="QLabel" name="colorBox2_17">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QLabel" name="colorBox2_18">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="page_9">
+                <layout class="QGridLayout" name="gridLayout_9">
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="colorBox3_7">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="check3_7">
+                   <property name="text">
+                    <string>VDD_MAIN</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QLineEdit" name="lineEdit3_2_1"/>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QCheckBox" name="check3_8">
+                   <property name="text">
+                    <string>VDD_CPU</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="5">
+                  <widget class="QLineEdit" name="lineEdit3_2_2"/>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="check3_9">
+                   <property name="text">
+                    <string>VDD_GPU</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QLineEdit" name="lineEdit3_2_3"/>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QCheckBox" name="check3_10">
+                   <property name="text">
+                    <string>VDD_DDRIO</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="5">
+                  <widget class="QLineEdit" name="lineEdit3_2_4"/>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QCheckBox" name="check3_11">
+                   <property name="text">
+                    <string>VDD_SW3V3</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QLineEdit" name="lineEdit3_2_5"/>
+                 </item>
+                 <item row="2" column="3">
+                  <widget class="QCheckBox" name="check3_12">
+                   <property name="text">
+                    <string>VDD_SW1V8</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="5">
+                  <widget class="QLineEdit" name="lineEdit3_2_6"/>
+                 </item>
+                 <item row="0" column="4">
+                  <widget class="QLabel" name="colorBox3_8">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="colorBox3_9">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="4">
+                  <widget class="QLabel" name="colorBox3_10">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLabel" name="colorBox3_11">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="4">
+                  <widget class="QLabel" name="colorBox3_12">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="page_10">
+                <layout class="QGridLayout" name="gridLayout_7">
+                 <item row="3" column="0">
+                  <widget class="QCheckBox" name="check4_13">
+                   <property name="text">
+                    <string>LDO_S</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="QLineEdit" name="lineEdit4_2_7"/>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QCheckBox" name="check4_15">
+                   <property name="text">
+                    <string>LDO_1V2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QCheckBox" name="check4_11">
+                   <property name="text">
+                    <string>LDO_SD2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QLineEdit" name="lineEdit4_2_3"/>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="check4_9">
+                   <property name="text">
+                    <string>LDO_SCU1V8</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="3">
+                  <widget class="QCheckBox" name="check4_14">
+                   <property name="text">
+                    <string>LDO_2V5</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QCheckBox" name="check4_10">
+                   <property name="text">
+                    <string>LDO_SD1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="6">
+                  <widget class="QLineEdit" name="lineEdit4_2_4"/>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="QLineEdit" name="lineEdit4_2_5"/>
+                 </item>
+                 <item row="0" column="6">
+                  <widget class="QLineEdit" name="lineEdit4_2_2"/>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QLineEdit" name="lineEdit4_2_1"/>
+                 </item>
+                 <item row="3" column="6">
+                  <widget class="QLineEdit" name="lineEdit4_2_6"/>
+                 </item>
+                 <item row="4" column="6">
+                  <widget class="QLineEdit" name="lineEdit4_2_8"/>
+                 </item>
+                 <item row="4" column="3">
+                  <widget class="QCheckBox" name="check4_16">
+                   <property name="text">
+                    <string>P5V0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="colorBox4_9">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLabel" name="colorBox4_11">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="3" colspan="2">
+                  <widget class="QCheckBox" name="check4_12">
+                   <property name="text">
+                    <string>SD1_SPWR</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="5">
+                  <widget class="QLabel" name="colorBox4_12">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="5">
+                  <widget class="QLabel" name="colorBox4_10">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="5">
+                  <widget class="QLabel" name="colorBox4_14">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="5">
+                  <widget class="QLabel" name="colorBox4_16">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLabel" name="colorBox4_13">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QLabel" name="colorBox4_15">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <action name="actionSet_Up_Window">
+   <property name="text">
+    <string>Set Up Window</string>
+   </property>
+  </action>
+  <action name="action_Set_Up">
+   <property name="text">
+    <string>&amp;Set Up Window</string>
+   </property>
+  </action>
+  <action name="action_Set_Up_Window">
+   <property name="text">
+    <string>&amp;Set Up Window</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
